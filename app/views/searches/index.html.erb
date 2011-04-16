@@ -4,11 +4,11 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<% if params[:q].any? %>
+<% if !params[:q].blank? %>
 	<p>You searched for "<%= params[:q] %>"</p>
 <% end %>
 
-<% if @results && @results["data"].any %>
+<% if @results && !@results["data"].blank? %>
 	<ul>
 	<% @results["data"].each do |result| %>
 		<li><%= result.inspect %></li>

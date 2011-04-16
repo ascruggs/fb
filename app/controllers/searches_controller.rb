@@ -7,7 +7,7 @@ class SearchesController < ApplicationController
       #store q && redirect
       session[:q] = params[:q]
       redirect_to facebook_auth
-    elsif user_signed_id? && session[:q].any?
+    elsif user_signed_in? && session[:q].any?
       #  remove q from session and render results
       params[:q] = session[:q].delete
       query_facebook

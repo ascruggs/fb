@@ -6,8 +6,9 @@ gem 'rails', '3.0.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'omniauth'
-gem 'fb_graph'
+gem "oa-oauth", :require => "omniauth/oauth"
+gem 'fbgraph'
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -2,7 +2,7 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   
-  config.omniauth :facebook, '219461168071118', '40f66e3a471361da450c10d7c271773f', {:scope => 'publish_stream,offline_access,email'}
+  config.omniauth :facebook, '219461168071118', '40f66e3a471361da450c10d7c271773f', {:scope => 'publish_stream,offline_access,email,user_about_me,user_activities,user_events,user_interests,user_likes,friends_about_me,friends_activities,friends_events,friends_groups,friends_interests,friends_likes'}
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "please-change-me@config-initializers-devise.com"

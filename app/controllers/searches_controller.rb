@@ -20,7 +20,9 @@ class SearchesController < ApplicationController
   private
   
   def query_facebook
-    @results = current_user.facebook.search.query(params[:q]).info!
+    if !params[:q].blank?
+      @results = current_user.facebook.search.query(params[:q]).info!
+    end
   end
     
 end

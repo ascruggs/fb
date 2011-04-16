@@ -1,8 +1,8 @@
 Fb::Application.routes.draw do
-  devise_for :users
+  devise_for :users,:controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   #resources :users
-  root :to => "users#index",:controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  root :to => "users#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

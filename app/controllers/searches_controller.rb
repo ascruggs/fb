@@ -1,9 +1,9 @@
 class SearchesController < ApplicationController
   
   def index
-    if !signed_in? && params[:q].blank?
+    if !user_signed_in? && params[:q].blank?
       #render page aka do nothing
-    elsif !signed_in? && params[:q]
+    elsif !user_signed_in? && params[:q]
       #store q && redirect
       session[:q] = params[:q]
       redirect_to facebook_auth

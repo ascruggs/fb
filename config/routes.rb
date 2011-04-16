@@ -2,6 +2,11 @@ Fb::Application.routes.draw do
   devise_for :users,:controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   #resources :users
+  resources :searches do
+    get 'find', :on => :collection
+    get 'list', :on => :collection
+    get 'lookup', :on => :collection
+  end
   root :to => "users#index"
   
   # The priority is based upon order of creation:

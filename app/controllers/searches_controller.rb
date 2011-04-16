@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
       redirect_to facebook_auth
     elsif user_signed_in? && !session[:q].blank?
       #  remove q from session and render results
-      params[:q] = session[:q].delete
+      params[:q] = session.delete(:q)
       query_facebook
     else
       #render results
@@ -21,6 +21,8 @@ class SearchesController < ApplicationController
   
   def query_facebook
     if !params[:q].blank?
+      #http://developers.facebook.com/docs/reference/api/
+      #https://github.com/nsanta/fbgraph
       @results = current_user.facebook.search.query(params[:q]).info!
     end
   end
